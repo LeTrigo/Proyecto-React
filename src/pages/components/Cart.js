@@ -11,22 +11,29 @@ const Cart = () => {
 
   const { products, cart } = state;
 
+  const addToCart = (id) => dispatch({ type: ADD_TO_CART, payload: id });
+
+  const deleteFromCart = (id) =>
+    dispatch({ type: REMOVE_ONE_ITEM, payload: id });
+
+  const clearCart = (id) => dispatch({ type: CLEAR_CART });
+
   return (
     <>
       <h2>Carrito de Compras</h2>
       <h3>Productos</h3>
       <div className="box grid-responsive">
         {products.map((product) => (
-          <Product product={product} />
+          <Product key={product.id} product={product} addToCart={addToCart} />
         ))}
       </div>
       <h3>Carrito</h3>
       <div className="box">
-        {cart.map((item) => (
-          <CartItem item={item} />
+        {cart.map((item, i) => (
+          <CartItem key={i} item={item} deleteFromCart={deleteFromCart} />
         ))}
       </div>
-      <button>Limpiar Carrito</button>
+      <button onClick={clearCart}>Limpiar Carrito</button>
     </>
   );
 };

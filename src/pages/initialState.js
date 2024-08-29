@@ -5,5 +5,5 @@ export const initialState = {
     { id: 3, name: "Libro3", price: 400 },
     { id: 4, name: "Libro4", price: 500 },
   ],
-  cart: [{ id: 4, name: "Libro4", price: 500 }],
+  cart: [],
 };
