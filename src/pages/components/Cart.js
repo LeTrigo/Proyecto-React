@@ -13,8 +13,13 @@ const Cart = () => {
 
   const addToCart = (id) => dispatch({ type: ADD_TO_CART, payload: id });
 
-  const deleteFromCart = (id) =>
-    dispatch({ type: REMOVE_ONE_ITEM, payload: id });
+  const deleteFromCart = (id, all = false) => {
+    if (all) {
+      dispatch({ type: REMOVE_ALL_ITEMS, payload: id });
+    } else {
+      dispatch({ type: REMOVE_ONE_ITEM, payload: id });
+    }
+  };
 
   const clearCart = (id) => dispatch({ type: CLEAR_CART });
 
