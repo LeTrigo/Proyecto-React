@@ -1,9 +1,13 @@
 import Cart from "./components/Cart";
+import Footer from "./components/footer/Footer";
+import SocialIcons from "./components/footer/SocialIcons";
 
 export default function Home() {
   return (
     <>
-      <Cart />
+      <Cart /> 
+      
+      <Footer />
     </>
   );
 }
