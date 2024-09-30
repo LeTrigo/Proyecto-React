@@ -1,11 +1,12 @@
 import Cart from "./components/Cart";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Navbar from "./components/Navbar";
 
 export default function Home() {
   return (
     <>
+      <Navbar />
       <Cart />
     </>
   );
 }
-
-//Me quede en el min 38 de la clase 24

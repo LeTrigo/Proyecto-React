@@ -1,11 +1,24 @@
 import { TYPES } from "../actions/actions";
 import { initialState } from "../initialState";
 
-const { ADD_TO_CART, REMOVE_ONE_ITEM, REMOVE_ALL_ITEMS, CLEAR_CART } = TYPES;
+const {
+  READ_STATE,
+  ADD_TO_CART,
+  REMOVE_ONE_ITEM,
+  REMOVE_ALL_ITEMS,
+  CLEAR_CART,
+} = TYPES;
 
 export const cartReducer = (state, action) => {
   {
     switch (action.type) {
+      case READ_STATE: {
+        return {
+          ...state,
+          products: action.payload.products,
+          cart: action.payload.cart,
+        };
+      }
       case ADD_TO_CART: {
         const newItem = state.products.find(
           (product) => product.id === action.payload
@@ -51,7 +64,10 @@ export const cartReducer = (state, action) => {
         };
       }
       case CLEAR_CART: {
-        return initialState;
+        return {
+          ...state,
+          cart: [],
+        };
       }
       default:
         return state;
