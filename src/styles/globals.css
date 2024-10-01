@@ -105,3 +105,36 @@ a {
     color-scheme: dark;
   }
 }
+
+.card-container {
+    color: black !important;
+    background-color: rgb(245, 249, 250) !important;
+
+}
+
+.card-container:hover {
+  box-shadow: 0px 0px 10px lightgrey !important;
+}
+
+.buy-button {
+  background-color: rgb(164, 235, 243) !important;
+  color: black !important;
+  border: 1px solid black !important;
+}
+
+.buy-button:hover {
+  background-color: rgb(170, 170, 170) !important;
+  box-shadow: 0px 0px 20px lightgrey !important;
+}
+
+.buy-button:active {
+  background-color: rgb(245, 249, 250) !important;
+}
+
+main {
+  width: 100% !important;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
