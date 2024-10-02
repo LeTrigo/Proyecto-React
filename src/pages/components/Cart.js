@@ -12,16 +12,12 @@ const {
   REMOVE_ONE_ITEM,
   REMOVE_ALL_ITEMS,
   CLEAR_CART,
-  UPDATE_CART,
-  DELETE_CART,
-  DELETE_ONE_ITEM,
 } = TYPES;
 
 const Cart = () => {
   const [state, dispatch] = useReducer(cartReducer, initialState);
 
   const { products, cart } = state;
-  // const { products, cart, setCart } = useContext(CartContext);
 
   const readState = async () => {
     const ENDPOINTS = {
@@ -47,7 +43,12 @@ const Cart = () => {
     readState();
   }, []);
 
-  const addToCart = (id) => {
+  const addToCart = async (id, product) => {
+    const ENDPOINTS = {
+      cart: "http://localhost:5000/cart",
+    };
+    const cartResponse = await axios.post(ENDPOINTS.cart, product);
+
     dispatch({ type: ADD_TO_CART, payload: id });
   };
 

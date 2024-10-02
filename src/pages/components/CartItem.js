@@ -6,7 +6,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { useReducer } from "react";
 
-const CartItem = ({ item, deleteFromCart, addToCart }) => {
+const CartItem = ({ item, deleteFromCart, addToCart, product }) => {
   const { name, price, id, quantity, image } = item;
   return (
     <>
@@ -38,7 +38,7 @@ const CartItem = ({ item, deleteFromCart, addToCart }) => {
                   className="rounded-5"
                   variant="outline-info"
                   onClick={() => {
-                    addToCart(id);
+                    addToCart(id, product);
                   }}
                 >
                   +
