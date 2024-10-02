@@ -1,18 +1,16 @@
 import { BsCartFill } from "react-icons/bs";
 import Dropdown from "react-bootstrap/Dropdown";
+import React, { useContext } from "react";
+
+import { CartContext } from "@/context/CartContext";
 
 const Navbar = () => {
-  // const { cartItems } = useContext(CartContext);
-
-  // const [cart, sertCart] = useContext(CartContext);
-  // const quantity = cart.reduce((acc, curr) => {
-  //   return acc + curr.quantity;
-  // }, 0);
+  const { cartItemCount } = useContext(CartContext);
   return (
     <>
       <Dropdown>
         <Dropdown.Toggle variant="success" id="dropdown-basic">
-          {/* <span> {state.contador}</span> */}
+          <span> {cartItemCount}</span>
           <BsCartFill />
         </Dropdown.Toggle>
 

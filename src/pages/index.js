@@ -2,11 +2,15 @@ import Cart from "./components/Cart";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "./components/Navbar";
 
+import { CartProvider } from "@/context/CartContext";
+
 export default function Home() {
   return (
     <>
-      <Navbar />
-      <Cart />
+      <CartProvider>
+        <Navbar />
+        <Cart />
+      </CartProvider>
     </>
   );
 }

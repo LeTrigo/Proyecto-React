@@ -1,5 +1,4 @@
 import { TYPES } from "../actions/actions";
-import { initialState } from "../initialState";
 
 const {
   READ_STATE,

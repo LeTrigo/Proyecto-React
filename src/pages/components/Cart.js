@@ -5,6 +5,7 @@ import { initialState } from "../initialState";
 import { TYPES } from "../actions/actions";
 import Product from "./Product";
 import CartItem from "./CartItem";
+import { CartContext } from "@/context/CartContext";
 
 const {
   READ_STATE,
@@ -15,8 +16,17 @@ const {
 } = TYPES;
 
 const Cart = () => {
+  // Estado local usando useReducer
   const [state, dispatch] = useReducer(cartReducer, initialState);
 
+  // Si tienes un contexto global (asegúrate de usar un nombre diferente para evitar conflictos)
+  const {
+    cart: cartItems,
+    removeFromCart,
+    clearCart,
+  } = useContext(CartContext);
+
+  // Cambié el nombre del estado `cart` local a `cartItems` para evitar conflictos con `globalCart`
   const { products, cart } = state;
 
   const readState = async () => {
@@ -24,11 +34,12 @@ const Cart = () => {
       products: "http://localhost:5000/products",
       cart: "http://localhost:5000/cart",
     };
+
     const productsResponse = await axios.get(ENDPOINTS.products),
       cartResponse = await axios.get(ENDPOINTS.cart);
 
-    const productsList = await productsResponse.data,
-      cartItems = await cartResponse.data;
+    const productsList = productsResponse.data;
+    const cartItems = cartResponse.data;
 
     dispatch({
       type: READ_STATE,
@@ -47,12 +58,20 @@ const Cart = () => {
     const ENDPOINTS = {
       cart: "http://localhost:5000/cart",
     };
-    const cartResponse = await axios.post(ENDPOINTS.cart, product);
+
+    const postResponse = await axios.post(ENDPOINTS.cart, product);
 
     dispatch({ type: ADD_TO_CART, payload: id });
   };
 
-  const deleteFromCart = (id, all = false) => {
+  const deleteFromCart = async (product, id, all = false) => {
+    const ENDPOINTS = {
+      cart: `http://localhost:5000/cart/`,
+    };
+
+    // Eliminar un ítem o todos los ítems del servidor según el parámetro `all`
+    const deleteResponse = await axios.delete(ENDPOINTS.cart, product);
+
     if (all) {
       dispatch({ type: REMOVE_ALL_ITEMS, payload: id });
     } else {
@@ -60,8 +79,12 @@ const Cart = () => {
     }
   };
 
-  const clearCart = (id) => dispatch({ type: CLEAR_CART });
+  const clearLocalCart = async (id) => {
+    // Limpiar el carrito en el estado local
 
+    await axios.delete("http://localhost:5000/cart"); // Eliminar todo del servidor
+    dispatch({ type: CLEAR_CART });
+  };
   return (
     <>
       <h2>Carrito de Compras</h2>
@@ -74,16 +97,20 @@ const Cart = () => {
       <h3>Carrito</h3>
 
       <div className="box">
-        {cart.map((item, i) => (
-          <CartItem
-            key={i}
-            item={item}
-            deleteFromCart={deleteFromCart}
-            addToCart={addToCart}
-          />
-        ))}
+        {cartItems.length > 0 ? (
+          cartItems.map((item, i) => (
+            <CartItem
+              key={i}
+              item={item}
+              deleteFromCart={deleteFromCart}
+              addToCart={addToCart}
+            />
+          ))
+        ) : (
+          <p>No hay items en el carrito</p>
+        )}
       </div>
-      <button onClick={clearCart}>Limpiar Carrito</button>
+      <button onClick={clearLocalCart}>Limpiar Carrito</button>
     </>
   );
 };
