@@ -1,11 +1,10 @@
-import Cart from "./components/Cart";
 import Footer from "./components/footer/Footer";
+import InfoCard from "./components/InfoCard";
 
 export default function Home() {
   return (
     <>
-      <Cart />
-      <Footer />
+      <InfoCard />
     </>
   );
 }
