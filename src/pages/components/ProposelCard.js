@@ -19,7 +19,7 @@ const cardsData = [
   {
     icon: <GiBookshelf size={30} style={{ color: ' #44BED4' }} />,
     title: 'Fomenta la cultura y el conocimiento:',
-    text: 'Al comprar en [Tu Librería], contribuyes a fomentar la cultura y el conocimiento en tu comunidad. ¡Sé parte de un movimiento que transforma vidas a través de la lectura!.'
+    text: 'Al comprar en Oasis, contribuyes a fomentar la cultura y el conocimiento en tu comunidad. ¡Sé parte de un movimiento que transforma vidas a través de la lectura!.'
   },
   {
     icon: <FaPeopleGroup size={30} style={{ color: ' #44BED4' }} />,
