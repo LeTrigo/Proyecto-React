@@ -16,7 +16,7 @@ const imageSources = [
 
 const Carrousel = () => (
   <>
-    <Carousel>
+    <Carousel controls={true} indicators={false} touch={true}>
       {imageSources.map(img => (
         <Carousel.Item key={img.id}>
           <img
