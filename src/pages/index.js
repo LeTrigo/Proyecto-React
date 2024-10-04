@@ -1,11 +1,11 @@
-import CardBase from "./components/cards/CardBase";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Image from "next/image";
+import CardContainer from "./components/cards/CardBase";
+
 
 export default function Home() {
   return (
     <main>
-      <CardBase />
+      <CardContainer />
     </main>
   );
 }
