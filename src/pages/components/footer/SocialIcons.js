@@ -30,6 +30,11 @@ const SocialIcons = () => {
                     align-items: center;
                     cursor:pointer;
                     margin:10px;
+                    transition: background-color 0.3s ease;
+                }
+                button:hover {
+                    background-color: #44BED4;
+                    color: #021F3F;
                 }
                  
 
