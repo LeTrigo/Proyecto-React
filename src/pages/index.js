@@ -1,13 +1,13 @@
-import Cart from "./components/Cart";
-import Footer from "./components/footer/Footer";
-import SocialIcons from "./components/footer/SocialIcons";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import NavBar from './components/NavBar/NavBar';
+
 
 export default function Home() {
   return (
     <>
-      <Cart /> 
-      
-      <Footer />
+      <main>
+        <NavBar />
+      </main>
     </>
   );
 }
