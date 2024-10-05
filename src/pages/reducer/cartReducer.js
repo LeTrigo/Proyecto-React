@@ -6,6 +6,8 @@ const {
   REMOVE_ONE_ITEM,
   REMOVE_ALL_ITEMS,
   CLEAR_CART,
+  SAVE_CART,
+  DELETE_CART_ITEM,
 } = TYPES;
 
 export const cartReducer = (state, action) => {
@@ -18,6 +20,17 @@ export const cartReducer = (state, action) => {
           cart: action.payload.cart,
         };
       }
+      case SAVE_CART: // Caso para guardar el carrito
+        return {
+          ...state,
+          cart: action.payload, // Actualizar el carrito con los datos guardados
+        };
+
+      case DELETE_CART_ITEM: // Caso para eliminar un ítem del carrito
+        return {
+          ...state,
+          cart: state.cart.filter((item) => item.id !== action.payload), // Filtrar el ítem eliminado
+        };
       case ADD_TO_CART: {
         const newItem = state.products.find(
           (product) => product.id === action.payload

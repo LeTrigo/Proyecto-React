@@ -2,7 +2,7 @@ import { BsCartFill } from "react-icons/bs";
 import Dropdown from "react-bootstrap/Dropdown";
 import React, { useContext } from "react";
 
-import { CartContext } from "@/context/CartContext";
+import { CartContext } from "@/context/cartContext";
 
 const Navbar = () => {
   const { cartItemCount } = useContext(CartContext);

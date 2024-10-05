@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
-import { CartContext } from "@/context/CartContext";
+import { CartContext } from "@/context/cartContext";
 
-const Product = ({ product }) => {
+const Product = ({ product, addToCart }) => {
   const { name, price, id, description, image } = product;
-  const { addToCart } = useContext(CartContext);
+
   return (
     <>
       <div className="product">
@@ -13,7 +13,7 @@ const Product = ({ product }) => {
         <p>{description}</p>
         <button
           onClick={() => {
-            addToCart(id, product);
+            addToCart(id);
           }}
         >
           Agregar
