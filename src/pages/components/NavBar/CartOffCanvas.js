@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { Image } from 'react-bootstrap';
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import ShoppingSection from './ShoppingSection';
 
-function CartDropdown() {
+function CartOffCanvas() {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -10,14 +11,14 @@ function CartDropdown() {
 
   return (
     <>
-      <Image className='cart-trigger' src="/img/carrito.png" onClick={handleShow}/>
+      <Image className='cart-trigger' src="/img/cart-icon.png" onClick={handleShow}/>
 
       <Offcanvas show={show} onHide={handleClose} placement='end'>
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>Tu carrito de compras</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          <img src="/img/eloquent-js.jpeg"/>
+          <ShoppingSection />
         </Offcanvas.Body>
       </Offcanvas>
     </>
@@ -26,4 +27,4 @@ function CartDropdown() {
 
 
 
-export default CartDropdown;
+export default CartOffCanvas;
