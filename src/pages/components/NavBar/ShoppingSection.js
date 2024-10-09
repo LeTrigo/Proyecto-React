@@ -11,7 +11,7 @@ const ShoppingSection = () => {
  */
   return (
     <>
-        <div>
+        <div className="shopping-section">
           <CartItem />
         </div>
     </>

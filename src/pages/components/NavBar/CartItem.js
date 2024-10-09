@@ -1,3 +1,6 @@
+import ClearCartButton from "./ClearCartButton"
+import DeleteAllItems from "./DeleteAllItems"
+import DeleteItem from "./DeleteItem"
 
 
 
@@ -8,19 +11,16 @@ const CartItem = () => {
     <>
     <div className="cart-item">
         <div className="cart-product"> 
-            <img src="./img/eloquent-js.jpeg" alt="producto" />
+            <img className="product-img" src="./img/eloquent-js.jpeg" alt="producto" />
                 <div className="cart-product-description">
-                    <p>'Articulo'</p>
+                    <h5>'Articulo'</h5>
                     <p>'Cantidad'</p>
                     <p>'Precio'</p>
                 </div>
         </div>
-        <div>
-            <button>Eliminar uno</button>
-            <button>Eliminar todos</button>
-        </div>
-        <div>
-            <button>Limpiar carrito</button>
+        <div className="delete-buttons">
+            <DeleteItem />
+            <DeleteAllItems />
         </div>
     </div>
     </>
