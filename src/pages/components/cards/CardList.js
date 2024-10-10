@@ -1,4 +1,6 @@
-import CardBase from './CardBase'
+import { Container } from "react-bootstrap"
+import CardBase from "./CardBase"
+
 
 
 
@@ -6,11 +8,11 @@ import CardBase from './CardBase'
 const CardList = (props) => {
   return (
     <>
-      <div>
+      <Container className="card-container">
         {
-            props.books.map(book => <CardBase book={book} />)
+            props.books.map(book => <CardBase book={book} /> )
         }
-      </div>
+      </Container>
     </>
   )
 }

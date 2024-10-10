@@ -10,13 +10,13 @@ const CardBase = (props) => {
 
   return (
     <>
-      <Card className="card-container" style={{ width: "18rem" }}>
-        <Card.Img variant="top" src={image} />
-        <Card.Body>
+      <Card className="card-base" style={{ width: "18rem" }}>
+        <Card.Img className="card-image" src={image} />
+        <Card.Body className="card-body">
           <Card.Title>{name}</Card.Title>
           <Card.Text>{description}</Card.Text>
           <Card.Text>Precio ${price}</Card.Text>
-          <BuyButton />
+          <BuyButton className="card-button"/>
         </Card.Body>
       </Card>
     </>

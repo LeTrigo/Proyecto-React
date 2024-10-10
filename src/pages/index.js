@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import CardContainer from "./components/cards/CardBase";
+import CardContainer from "./components/cards/CardContainer";
 
 
 export default function Home() {
@@ -10,4 +10,3 @@ export default function Home() {
   );
 }
 
-//Me quede en el min 38 de la clase 24
