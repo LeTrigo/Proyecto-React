@@ -31,6 +31,14 @@ export const cartReducer = (state, action) => {
           (product) => product.id === action.payload
         );
 
+        if (!newItem) {
+          console.error(
+            "Producto no encontrado en ADD_TO_CART",
+            action.payload
+          );
+          return state; // Retorna el estado actual si no se encuentra el producto
+        }
+
         const itemInCart = state.cart.find((item) => item.id === newItem.id);
         return itemInCart
           ? {
@@ -46,10 +54,19 @@ export const cartReducer = (state, action) => {
               cart: [...state.cart, { ...newItem, quantity: 1 }],
             };
       }
-      case REMOVE_ONE_ITEM:
+
+      case REMOVE_ONE_ITEM: {
         const itemToDelete = state.cart.find(
           (item) => item.id == action.payload
         );
+
+        if (!itemToDelete) {
+          console.error(
+            "Producto no encontrado en REMOVE_ONE_ITEM",
+            action.payload
+          );
+          return state; // Retorna el estado actual si no se encuentra el producto
+        }
 
         return itemToDelete.quantity > 1
           ? {
@@ -64,6 +81,7 @@ export const cartReducer = (state, action) => {
               ...state,
               cart: state.cart.filter((item) => item.id !== itemToDelete.id),
             };
+      }
 
       case REMOVE_ALL_ITEMS: {
         return {

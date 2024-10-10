@@ -9,6 +9,7 @@ import {
   deleteAllItemsWithSameId,
   incrementItemQuantity,
   addOneItem,
+  removeItemFromCart,
 } from "@/pages/utils/axiosActions";
 import { TYPES } from "@/pages/actions/actions";
 
@@ -40,17 +41,20 @@ export const CartProvider = ({ children }) => {
   };
 
   // Función para eliminar un producto del carrito
-  const deleteFromCart = (id, all = false) => {
+  const deleteFromCart = (product, all = false) => {
+    removeItemFromCart(product, all);
     if (all) {
-      dispatch({ type: REMOVE_ALL_ITEMS, payload: id });
+      dispatch({ type: REMOVE_ALL_ITEMS, payload: product.id });
     } else {
-      dispatch({ type: REMOVE_ONE_ITEM, payload: id });
+      dispatch({ type: REMOVE_ONE_ITEM, payload: product.id });
     }
-    deleteAllItemsWithSameId();
+    readState();
   };
 
   // Función para limpiar el carrito
   const clearCart = () => {
+    removeItemFromCart();
+
     dispatch({ type: CLEAR_CART });
   };
 

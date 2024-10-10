@@ -5,7 +5,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-const CartItem = ({ item, deleteFromCart, addToCart, product }) => {
+const CartItem = ({ item, deleteFromCart, addToCart }) => {
   const { name, price, id, quantity, image } = item;
   return (
     <>
@@ -34,11 +34,11 @@ const CartItem = ({ item, deleteFromCart, addToCart, product }) => {
               <h6 className="mb-4">$ {price * quantity}</h6>
               <div className="d-flex justify-content-between align-items-center">
                 <Button
+                  onClick={() => {
+                    addToCart(item);
+                  }}
                   className="rounded-5"
                   variant="outline-info"
-                  onClick={() => {
-                    addToCart(product);
-                  }}
                 >
                   +
                 </Button>{" "}
@@ -46,7 +46,7 @@ const CartItem = ({ item, deleteFromCart, addToCart, product }) => {
                 <Button
                   className="rounded-4"
                   variant="outline-info"
-                  onClick={() => deleteFromCart(id)}
+                  onClick={() => deleteFromCart(item)}
                 >
                   -
                 </Button>{" "}
@@ -57,7 +57,7 @@ const CartItem = ({ item, deleteFromCart, addToCart, product }) => {
               <Button
                 className="rounded-5"
                 variant="outline-danger"
-                onClick={() => deleteFromCart(id, true)}
+                onClick={() => deleteFromCart(item, true)}
               >
                 <BsFillTrash3Fill />
               </Button>{" "}
