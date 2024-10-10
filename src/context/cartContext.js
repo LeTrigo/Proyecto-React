@@ -1,7 +1,15 @@
 import React, { createContext, useReducer, useEffect } from "react";
 import { cartReducer } from "@/pages/reducer/cartReducer";
 import { initialState } from "@/pages/initialState";
-import { readState, saveCart, deleteCart } from "@/pages/utils/axiosActions";
+import {
+  readState,
+  saveCart,
+  deleteCart,
+  updateProductQuantity,
+  deleteAllItemsWithSameId,
+  incrementItemQuantity,
+  addOneItem,
+} from "@/pages/utils/axiosActions";
 import { TYPES } from "@/pages/actions/actions";
 
 const {
@@ -10,8 +18,6 @@ const {
   REMOVE_ONE_ITEM,
   REMOVE_ALL_ITEMS,
   CLEAR_CART,
-  SAVE_CART,
-  DELETE_CART_ITEM,
 } = TYPES;
 export const CartContext = createContext();
 
@@ -27,26 +33,25 @@ export const CartProvider = ({ children }) => {
     loadInitialState();
   }, []);
 
-  const addToCart = async (product) => {
+  const addToCart = (product) => {
     dispatch({ type: ADD_TO_CART, payload: product.id });
-    await saveCart(product);
+
+    saveCart(product);
   };
 
   // Función para eliminar un producto del carrito
-  const removeFromCart = async (id, all = false) => {
+  const deleteFromCart = (id, all = false) => {
     if (all) {
       dispatch({ type: REMOVE_ALL_ITEMS, payload: id });
     } else {
       dispatch({ type: REMOVE_ONE_ITEM, payload: id });
     }
-    await deleteCart(id);
+    deleteAllItemsWithSameId();
   };
 
   // Función para limpiar el carrito
-  const clearCart = async () => {
+  const clearCart = () => {
     dispatch({ type: CLEAR_CART });
-    await deleteCart();
-    dispatch({ type: REMOVE_ALL_ITEMS });
   };
 
   // Calcular el total de ítems en el carrito usando `state.cart`
@@ -61,7 +66,7 @@ export const CartProvider = ({ children }) => {
         state,
         dispatch,
         addToCart,
-        removeFromCart,
+        deleteFromCart,
         clearCart,
         cartItemCount,
       }}

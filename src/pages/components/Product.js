@@ -13,7 +13,7 @@ const Product = ({ product, addToCart }) => {
         <p>{description}</p>
         <button
           onClick={() => {
-            addToCart(id);
+            addToCart(product);
           }}
         >
           Agregar

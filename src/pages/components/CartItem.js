@@ -37,7 +37,7 @@ const CartItem = ({ item, deleteFromCart, addToCart, product }) => {
                   className="rounded-5"
                   variant="outline-info"
                   onClick={() => {
-                    addToCart(id, product);
+                    addToCart(product);
                   }}
                 >
                   +

@@ -20,11 +20,6 @@ export const cartReducer = (state, action) => {
           cart: action.payload.cart,
         };
       }
-      case SAVE_CART: // Caso para guardar el carrito
-        return {
-          ...state,
-          cart: action.payload, // Actualizar el carrito con los datos guardados
-        };
 
       case DELETE_CART_ITEM: // Caso para eliminar un ítem del carrito
         return {
@@ -35,6 +30,7 @@ export const cartReducer = (state, action) => {
         const newItem = state.products.find(
           (product) => product.id === action.payload
         );
+
         const itemInCart = state.cart.find((item) => item.id === newItem.id);
         return itemInCart
           ? {

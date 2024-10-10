@@ -15,8 +15,6 @@ const {
   CLEAR_CART,
 } = TYPES;
 
-//Tengo que sacar las funciones de aquí, y solo utilizar las del context
-
 const Cart = () => {
   const {
     state,
