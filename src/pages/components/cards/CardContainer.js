@@ -6,7 +6,7 @@ const books = [
       id: "1",
       name: "Aprender a programar en C",
       price: 20000,
-      image: "img/aprender-a-programar-en-c.jpeg",
+      image: "./img/aprender-a-programar-en-c.jpeg",
       description: "Aprende a programar en C desde 0 con este grandioso libro"
     },
     {
