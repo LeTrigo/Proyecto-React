@@ -6,9 +6,7 @@ import {
   saveCart,
   deleteCart,
   updateProductQuantity,
-  deleteAllItemsWithSameId,
-  incrementItemQuantity,
-  addOneItem,
+  clearAllCart,
   removeItemFromCart,
 } from "@/pages/utils/axiosActions";
 import { TYPES } from "@/pages/actions/actions";
@@ -53,7 +51,7 @@ export const CartProvider = ({ children }) => {
 
   // Función para limpiar el carrito
   const clearCart = () => {
-    removeItemFromCart();
+    clearAllCart();
 
     dispatch({ type: CLEAR_CART });
   };

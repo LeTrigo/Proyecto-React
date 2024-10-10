@@ -92,6 +92,27 @@ export const removeItemFromCart = async (product, all = false) => {
   }
 };
 
+export const clearAllCart = async () => {
+  try {
+    // Primero, obtener todos los elementos del carrito
+    const response = await axios.get(`${ENDPOINTS.cart}`);
+    const items = response.data;
+
+    // Si hay elementos, eliminarlos uno por uno
+    if (items.length > 0) {
+      await Promise.all(
+        items.map(
+          (item) => axios.delete(`${ENDPOINTS.cart}/${item.id}`) // Eliminar cada producto por ID
+        )
+      );
+      console.log("Carrito limpiado en el backend.");
+    } else {
+      console.log("El carrito ya está vacío.");
+    }
+  } catch (error) {
+    console.error("Error al limpiar el carrito:", error);
+  }
+};
 // export const addOneItem = async (product) => {
 //   const id = product.id;
 //   const ENDPOINT = `http://localhost:5000/cart/${id}`;

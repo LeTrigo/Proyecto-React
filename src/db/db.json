@@ -120,14 +120,5 @@
       "description": "Adentrate en la terrorifica historia de misery"
     }
   ],
-  "cart": [
-    {
-      "id": "16",
-      "name": "IT de Stephen King",
-      "price": 50000,
-      "image": "img/stephen-king-it.jpeg",
-      "description": "Adentrate en la terrorifica historia del payaso maldito",
-      "quantity": 3
-    }
-  ]
+  "cart": []
 }
