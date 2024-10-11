@@ -1,12 +1,17 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import CardContainer from "./components/cards/CardContainer";
-
+import Carrousel from "./components/carousel/Carrousel";
+import Cart from "./components/Cart";
+import Footer from "./components/footer/Footer";
 
 export default function Home() {
   return (
-    <main>
-      <CardContainer />
-    </main>
+    <>
+      <Cart />
+      <Carrousel />
+      <Footer /> 
+      
+  
+    </>
+
   );
 }
 
