@@ -19,10 +19,12 @@ const Carrousel = () => (
     <Carousel controls={true} indicators={false} touch={true}>
       {imageSources.map(img => (
         <Carousel.Item key={img.id}>
+          <row className="carousel-item">
           <img
             className="carousel-img d-block w-100"
             src={img.src}
           />
+          </row>
         </Carousel.Item>
       ))}
     </Carousel>
@@ -30,6 +32,13 @@ const Carrousel = () => (
     <style jsx>{`
       .carousel-img {
         height: 20vh;
+        width: 80vh !important;
+      }
+
+      .carousel-item {
+        display: flex;
+        justify-content: center;
+        background-color: rgb(170, 170, 170, 70%);
       }
 
       @media (min-width: 768px) {

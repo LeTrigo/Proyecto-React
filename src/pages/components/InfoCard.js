@@ -112,6 +112,10 @@ const InfoCard = () => {
 
             object-fit: cover;
           }
+
+          .container border {
+            padding-top: 50px;
+          }
         `}
       </style>
     </>
