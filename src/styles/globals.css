@@ -104,6 +104,97 @@ a {
   }
 }
 
+.card-base {
+  width: 250px !important;
+  height: 550px !important;
+  color: black !important;
+  border: 1px solid black !important;
+  font-family: "Libre Baskerville", serif !important;
+  font-size: 0.8rem !important;
+  margin: 3%;
+}
+
+.card-base:hover {
+  box-shadow: 0px 0px 20px rgb(136, 136, 136) !important;
+  transition: 0.3s !important;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  
+}
+
+.card-image {
+  height: 60% !important;
+  object-fit: cover;
+}
+
+.card-body {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.card-button {
+  align-self: baseline !important;
+}
+
+.ClearCartButton:hover {
+  background-color: rgb(170, 170, 170) !important;
+  box-shadow: 0px 0px 20px white !important;
+  color: white !important;
+  font-family: "Libre Baskerville", serif !important;
+  font-size: 0.8rem !important;
+}
+
+.ClearCartButton:active {
+  background-color: rgb(245, 249, 250) !important;
+
+}
+
+.card-container:hover {
+  box-shadow: 0px 0px 10px lightgrey !important;
+}
+
+.buy-button {
+  background-color: rgb(164, 235, 243) !important;
+  color: black !important;
+  border: 1px solid black !important;
+  font-family: "Libre Baskerville", serif !important;
+  font-size: 0.8rem !important;
+}
+
+.buy-button:hover {
+  background-color: rgb(170, 170, 170) !important;
+  box-shadow: 0px 0px 20px lightgrey !important;
+  color: white !important;
+  font-family: "Libre Baskerville", serif !important;
+  font-size: 0.8rem !important;
+}
+
+.buy-button:active {
+  background-color: rgb(245, 249, 250) !important;
+  color: black !important;
+  transform: scale(0.9) !important;
+  transition: 0.1s !important;
+  font-family: "Libre Baskerville", serif !important;
+  font-size: 0.8rem !important;
+}
+
+.delete-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 10px;
+  font-family: "Libre Baskerville", serif !important;
+  font-size: 0.8rem !important;
+}
+
+.clear-cart-button {
+  font-family: "Libre Baskerville", serif !important;
+  font-size: 0.8rem !important;
+}
 main {
   height: 100vh;
 }
