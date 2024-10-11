@@ -1,13 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
+import { CartContext } from "@/context/cartContext";
 
 const Product = ({ product, addToCart }) => {
-  const { name, price, id } = product;
+  const { name, price, id, description, image } = product;
+
   return (
     <>
       <div className="product">
+        <img src={image}></img>
         <h4>{name}</h4>
         <h5>${price}</h5>
-        <button onClick={() => addToCart(id)}>Agregar</button>
+        <p>{description}</p>
+        <button
+          onClick={() => {
+            addToCart(product);
+          }}
+        >
+          Agregar
+        </button>
       </div>
     </>
   );

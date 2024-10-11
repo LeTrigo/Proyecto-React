@@ -1,27 +1,32 @@
-import React, { useReducer } from "react";
+import { useReducer, useEffect, useContext } from "react";
+import axios from "axios";
 import { cartReducer } from "../reducer/cartReducer";
-import { initialState } from "../initialState";
 import { TYPES } from "../actions/actions";
 import Product from "./Product";
 import CartItem from "./CartItem";
-const { ADD_TO_CART, REMOVE_ONE_ITEM, REMOVE_ALL_ITEMS, CLEAR_CART } = TYPES;
+import { CartContext } from "@/context/cartContext";
+import { readState, saveCart, deleteCart } from "@/pages/utils/axiosActions";
+
+const {
+  READ_STATE,
+  ADD_TO_CART,
+  REMOVE_ONE_ITEM,
+  REMOVE_ALL_ITEMS,
+  CLEAR_CART,
+} = TYPES;
 
 const Cart = () => {
-  const [state, dispatch] = useReducer(cartReducer, initialState);
+  const {
+    state,
+    dispatch,
+    removeFromCart,
+    clearCart,
+    cartItemCount,
+    deleteFromCart,
+    addToCart,
+  } = useContext(CartContext);
 
   const { products, cart } = state;
-
-  const addToCart = (id) => dispatch({ type: ADD_TO_CART, payload: id });
-
-  const deleteFromCart = (id, all = false) => {
-    if (all) {
-      dispatch({ type: REMOVE_ALL_ITEMS, payload: id });
-    } else {
-      dispatch({ type: REMOVE_ONE_ITEM, payload: id });
-    }
-  };
-
-  const clearCart = (id) => dispatch({ type: CLEAR_CART });
 
   return (
     <>
@@ -33,10 +38,20 @@ const Cart = () => {
         ))}
       </div>
       <h3>Carrito</h3>
+
       <div className="box">
-        {cart.map((item, i) => (
-          <CartItem key={i} item={item} deleteFromCart={deleteFromCart} />
-        ))}
+        {cart.length > 0 ? (
+          cart.map((item, i) => (
+            <CartItem
+              key={i}
+              item={item}
+              deleteFromCart={deleteFromCart}
+              addToCart={addToCart}
+            />
+          ))
+        ) : (
+          <p>No hay items en el carrito</p>
+        )}
       </div>
       <button onClick={clearCart}>Limpiar Carrito</button>
     </>
