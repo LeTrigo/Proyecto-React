@@ -120,5 +120,14 @@
       "description": "Adentrate en la terrorifica historia de misery"
     }
   ],
-  "cart": []
-
+  "cart": [
+    {
+      "id": "12",
+      "name": "Emociones Nutritivas",
+      "price": 26000,
+      "image": "img/stamateas-emociones-nutritivas.jpeg",
+      "description": "Con este libro descubriras las emociones más importantes",
+      "quantity": 2
+    }
+  ]
+}
