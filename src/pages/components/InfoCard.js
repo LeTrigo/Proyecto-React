@@ -65,7 +65,7 @@ const InfoCard = () => {
           >
             {" "}
             <div className="image__container ">
-              <img className="image" src="/img/carousel1.jpeg" />
+              <img className="image" src="/img/carousel2.jpeg" />
             </div>
           </Col>
         </Row>
