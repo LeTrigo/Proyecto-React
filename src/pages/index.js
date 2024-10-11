@@ -1,15 +1,12 @@
-import Carrousel from "./components/carousel/Carrousel";
-import Cart from "./components/Cart";
-import Footer from "./components/footer/Footer";
+import InfoCard from "./components/InfoCard";
+import ProposelCard from "./components/ProposelCard";
+
 
 export default function Home() {
   return (
     <>
-      <Cart />
-      <Carrousel />
-      <Footer /> 
-      
-  
+      <ProposelCard />
+      <InfoCard />
     </>
 
   );
