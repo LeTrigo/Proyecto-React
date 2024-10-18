@@ -125,7 +125,7 @@ a {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  
+  padding-top: 200px !important;
 }
 
 .card-image {
@@ -260,6 +260,7 @@ main {
 .user-trigger {
   padding: 6px;
   height: 40px;
+  width: 40px;
   background-color: white;
   border-radius: 50px;
   border: 1px solid grey;
@@ -286,6 +287,7 @@ main {
 .search-trigger {
   padding: 6px;
   height: 40px;
+  width: 40px;
   background-color: white;
   border-radius: 50px;
   border: 1px solid grey;
@@ -354,15 +356,15 @@ main {
 
 .cart-product {
   display: flex;
+  justify-content: center;
   flex-direction: row;
   margin-bottom: 10px;
 }
 
 .cart-product-description {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   line-height: 70px;
-  padding-left: 3%;
   font-family: "Libre Baskerville", serif;
 }
 
@@ -392,11 +394,15 @@ main {
 }
 
 .DeleteItem {
+  height: 40px;
+  width: 40px;
   background-color: rgb(164, 235, 243) !important;
   color: black !important;
   border: 1px solid black !important;
   font-family: "Libre Baskerville", serif !important;
   font-size: 0.8rem !important;
+  font-weight: bold !important;
+  border-radius: 50px !important;
 }
 
 .DeleteItem:hover {
@@ -408,31 +414,6 @@ main {
 }
 
 .DeleteItem:active {
-  background-color: rgb(245, 249, 250) !important;
-  color: black !important;
-  transform: scale(0.9) !important;
-  transition: 0.1s !important;
-  font-family: "Libre Baskerville", serif !important;
-  font-size: 0.8rem !important;
-}
-
-.DeleteAllItems {
-  background-color: rgb(164, 235, 243) !important;
-  color: black !important;
-  border: 1px solid black !important;
-  font-family: "Libre Baskerville", serif !important;
-  font-size: 0.8rem !important;
-}
-
-.DeleteAllItems:hover {
-  background-color: rgb(170, 170, 170) !important;
-  box-shadow: 0px 0px 20px white !important;
-  color: white !important;
-  font-family: "Libre Baskerville", serif !important;
-  font-size: 0.8rem !important;
-}
-
-.DeleteAllItems:active {
   background-color: rgb(245, 249, 250) !important;
   color: black !important;
   transform: scale(0.9) !important;
@@ -456,4 +437,75 @@ main {
 
 .py-5 {
   margin-top: 70px !important;
+}
+
+.delete-all-items {
+  padding: 6px;
+  height: 40px;
+  width: 40px;
+  background-color: rgb(164, 235, 243) !important;
+  border-radius: 50px;
+  border: 1px solid grey;
+  margin-right: 1.5%;
+  cursor: pointer;
+  padding: 9px;
+}
+
+.delete-all-items:hover {
+  background-color: rgb(170, 170, 170) !important;
+  box-shadow: 0px 0px 20px white !important;
+  color: white !important;
+}
+
+.delete-all-items:active {
+  background-color: rgb(245, 249, 250) !important;
+  color: black !important;
+  transform: scale(0.9) !important;
+  transition: 0.1s !important;
+}
+
+.AddItem {
+  height: 40px;
+  width: 40px;
+  background-color: rgb(164, 235, 243) !important;
+  color: black !important;
+  border: 1px solid black !important;
+  font-family: "Libre Baskerville", serif !important;
+  font-size: 0.8rem !important;
+  border-radius: 50px !important;
+}
+
+.AddItem:hover {
+  background-color: rgb(170, 170, 170) !important;
+  box-shadow: 0px 0px 20px white !important;
+  color: white !important;
+  font-family: "Libre Baskerville", serif !important;
+  font-size: 0.8rem !important;
+}
+
+.AddItem:active {
+  background-color: rgb(245, 249, 250) !important;
+  color: black !important;
+  transform: scale(0.9) !important;
+  transition: 0.1s !important;
+  font-family: "Libre Baskerville", serif !important;
+  font-size: 0.8rem !important;
+}
+
+.DeleteAllItems {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  padding-top: 10px;
+}
+
+.cart-counter {
+  padding: 6px;
+  height: 40px;
+  width: 40px;
+  background-color: rgb(164, 235, 243) !important;
+  border-radius: 10px;
+  border: 1px solid grey;
+  margin-right: 1.5%;
+  padding: 9px;
 }

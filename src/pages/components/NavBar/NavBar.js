@@ -5,7 +5,7 @@ import { Image, NavDropdown, NavLink } from "react-bootstrap";
 
 function NavBar() {
   return (
-    <Navbar expand fixed="top" className="main-navbar">
+    <Navbar expand="lg" fixed="top" className="main-navbar">
       <Container fluid>
         <img
           className="navbar-logo"
