@@ -2,10 +2,14 @@ import Button from 'react-bootstrap/Button';
 
 
 
-function BuyButton() {
+
+function BuyButton({addToCart, book}) {
+
   return (
     <>
-      <Button className='buy-button'>Comprar</Button>{' '}
+    <Button onClick={()=> addToCart(book) }className='buy-button'  >Comprar</Button>{' '} 
+
+      {/* <Button className='buy-button' addToCart={addToCart} book={props.book} >Comprar</Button>{' '} */}
     </>
   );
 }

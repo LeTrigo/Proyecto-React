@@ -6,14 +6,15 @@ import Product from "./Product";
 import CartItem from "./CartItem";
 import { CartContext } from "@/context/cartContext";
 import { readState, saveCart, deleteCart } from "@/pages/utils/axiosActions";
+import CardContainer from "./cards/CardContainer";
 
-const {
-  READ_STATE,
-  ADD_TO_CART,
-  REMOVE_ONE_ITEM,
-  REMOVE_ALL_ITEMS,
-  CLEAR_CART,
-} = TYPES;
+// const {
+//   READ_STATE,
+//   ADD_TO_CART,
+//   REMOVE_ONE_ITEM,
+//   REMOVE_ALL_ITEMS,
+//   CLEAR_CART,
+// } = TYPES;
 
 const Cart = () => {
   const {
@@ -32,14 +33,15 @@ const Cart = () => {
     <>
       <h2>Carrito de Compras</h2>
       <h3>Productos</h3>
-      <div className="box grid-responsive">
+      {/* <div className="box grid-responsive">
         {products.map((product) => (
           <Product key={product.id} product={product} addToCart={addToCart} />
         ))}
-      </div>
-      <h3>Carrito</h3>
+      </div> */}
+      <CardContainer books={products}/>
+      {/* <h3>Carrito</h3> */}
 
-      <div className="box">
+      {/* <div className="box">
         {cart.length > 0 ? (
           cart.map((item, i) => (
             <CartItem
@@ -52,7 +54,7 @@ const Cart = () => {
         ) : (
           <p>No hay items en el carrito</p>
         )}
-      </div>
+      </div> */}
       <button onClick={clearCart}>Limpiar Carrito</button>
     </>
   );

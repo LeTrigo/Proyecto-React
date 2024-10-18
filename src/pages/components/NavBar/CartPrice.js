@@ -8,7 +8,7 @@ const CartPrice = () => {
     <>
         <div className="cart-price">
             <div className="cart-price-text">
-                <p>Costo de tu compra: $99999</p>
+                <p>Costo de tu compra:</p>
             </div>
             <ClearCartButton className="clear-cart-button" />
         </div>

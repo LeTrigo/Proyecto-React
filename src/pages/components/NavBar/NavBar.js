@@ -2,8 +2,12 @@ import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import CartOffCanvas from "./CartOffCanvas";
 import { Image, NavDropdown, NavLink } from "react-bootstrap";
+import { useContext } from "react";
+import { CartContext } from "@/context/cartContext";
 
 function NavBar() {
+  const {cartItemCount} = useContext(CartContext)
+  
   return (
     <Navbar expand="lg" fixed="top" className="main-navbar">
       <Container fluid>
@@ -31,6 +35,7 @@ function NavBar() {
             <Image className="user-icon" src="./img/user-icon.png" />
           </div>
           <CartOffCanvas />
+          <span>{cartItemCount}</span>
         </Navbar.Collapse>
       </Container>
     </Navbar>

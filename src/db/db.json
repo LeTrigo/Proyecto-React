@@ -122,12 +122,68 @@
   ],
   "cart": [
     {
-      "id": "12",
-      "name": "Emociones Nutritivas",
-      "price": 26000,
-      "image": "img/stamateas-emociones-nutritivas.jpeg",
-      "description": "Con este libro descubriras las emociones más importantes",
-      "quantity": 2
+      "id": "4",
+      "name": "Deja de ser tu",
+      "price": 40000,
+      "image": "img/deja-de-ser-tu.jpeg",
+      "description": "Cambia tu perspectiva, y cambia tu realidad",
+      "quantity": 1
+    },
+    {
+      "id": "17",
+      "name": "Misery Stephen King",
+      "price": 48000,
+      "image": "img/stephen-king-misery.jpeg",
+      "description": "Adentrate en la terrorifica historia de misery",
+      "quantity": 7
+    },
+    {
+      "id": "3",
+      "name": "DC comics",
+      "price": 17000,
+      "image": "img/dc-comics.jpeg",
+      "description": "Adentrate en las grandes aventuras de los heroes de DC",
+      "quantity": 1
+    },
+    {
+      "id": "7",
+      "name": "Harry Potter: El legado maldito",
+      "price": 45000,
+      "image": "img/harry-potter-el-legado-maldito.jpeg",
+      "description": "Disfruta de la gran historia de Harry Potter",
+      "quantity": 1
+    },
+    {
+      "id": "16",
+      "name": "IT de Stephen King",
+      "price": 50000,
+      "image": "img/stephen-king-it.jpeg",
+      "description": "Adentrate en la terrorifica historia del payaso maldito",
+      "quantity": 4
+    },
+    {
+      "id": "15",
+      "name": "El visitante de Stephen King",
+      "price": 46000,
+      "image": "img/stephen-king-el-visitante.jpeg",
+      "description": "Adentrate en la terrorifica historia del visitante",
+      "quantity": 1
+    },
+    {
+      "id": "2",
+      "name": "Caperucita Roja",
+      "price": 10000,
+      "image": "img/caperucita-roja.jpeg",
+      "description": "Un gran cuento para niños",
+      "quantity": 1
+    },
+    {
+      "id": "5",
+      "name": "El libro de la selva",
+      "price": 12000,
+      "image": "img/el-libro-de-la-selva.jpeg",
+      "description": "Un gran cuento de aventuras para niños",
+      "quantity": 1
     }
   ]
 }
