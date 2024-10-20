@@ -1,14 +1,13 @@
-import { CartContext } from '@/context/cartContext';
-import { useContext } from 'react';
+
 import Button from 'react-bootstrap/Button';
 
 
 
-function DeleteItem() {
-  const {removeFromCart}= useContext(CartContext)
+function DeleteItem({deleteFromCart, book}) {
+
   return (
     <>
-      <Button className='DeleteItem' removeFromCart={removeFromCart}>-</Button>{' '}
+      <Button onClick={()=> deleteFromCart(book)} className='DeleteItem' >-</Button>{' '}
     </>
   );
 }

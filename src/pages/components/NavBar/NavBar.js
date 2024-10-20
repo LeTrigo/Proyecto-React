@@ -1,7 +1,7 @@
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import CartOffCanvas from "./CartOffCanvas";
-import { Image, NavDropdown, NavLink } from "react-bootstrap";
+import { Image, NavDropdown } from "react-bootstrap";
 import { useContext } from "react";
 import { CartContext } from "@/context/cartContext";
 

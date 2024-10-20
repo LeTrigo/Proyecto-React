@@ -1,11 +1,12 @@
+import { Button } from "react-bootstrap";
 
-
-
-
-function DeleteAllItems() {
+function DeleteAllItems({deleteFromCart, book}) {
   return (
     <>
-      <img className='delete-all-items' src="/img/trash.png" onClick={''}/>
+    <Button>
+      <img className='delete-all-items' src="/img/trash.png" onClick={()=>deleteFromCart(book, true)}/>
+    </Button>
+      
     </>
   );
 }

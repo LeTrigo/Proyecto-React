@@ -9,7 +9,7 @@ import { CartContext } from "@/context/cartContext";
 const CardBase = (props) => {
   const {addToCart} = useContext(CartContext)
 
-  const { image, name, description, price } = props.book
+  const { image, name, description, price} = props.book
 
   return (
     <>
@@ -19,7 +19,6 @@ const CardBase = (props) => {
           <Card.Title>{name}</Card.Title>
           <Card.Text>{description}</Card.Text>
           <Card.Text>Precio ${price}</Card.Text>
-          {/* <BuyButton className="card-button"/> */}
           <BuyButton className='card-button' addToCart={addToCart} book={props.book} />
 
         </Card.Body>

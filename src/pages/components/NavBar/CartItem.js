@@ -1,22 +1,19 @@
 import AddItem from "./AddItem"
-import CartCounter from "./CartCounter"
-import ClearCartButton from "./ClearCartButton"
 import DeleteAllItems from "./DeleteAllItems"
 import DeleteItem from "./DeleteItem"
 import { useContext } from "react"
 import { CartContext } from "@/context/cartContext"
+import CartCounter from "./CartCounter"
 
 
 
+const CartItem = ( {item}) => {
+  const {addToCart, deleteFromCart} = useContext(CartContext)
 
+  const {name, quantity, image, price, id} = item
 
-const CartItem = ({item, props}) => {
-  const {addToCart} = useContext(CartContext)
-
-  const{name, quantity, image, price}= item 
   return (
     <>
-   
     <div className="cart-item">
         <div className="cart-product"> 
             <img src={image} alt="producto" />
@@ -27,12 +24,13 @@ const CartItem = ({item, props}) => {
             <dfn>${price * quantity}</dfn>
           </div>
         <div className="delete-buttons">
-          <DeleteItem />
-          <span>{quantity}</span>
-          <AddItem  addToCart={addToCart} book={props.book} />
+          <DeleteItem deleteFromCart={deleteFromCart} book={item}/>
+          <CartCounter quantity={quantity}/>
+         
+          <AddItem  addToCart={addToCart} book={item} />
         </div>
         <div className="DeleteAllItems">
-          <DeleteAllItems />
+          <DeleteAllItems deleteFromCart={deleteFromCart} book={item}/>
         </div>
     </div>
     </>

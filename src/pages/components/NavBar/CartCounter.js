@@ -3,10 +3,10 @@
 
 
 
-const CartCounter = () => {
+const CartCounter = ({quantity}) => {
   return (
     <>
-      <span className='cart-counter'>{' '}</span>
+      <span className='cart-counter'>{quantity}</span>
     </>
   )
 }

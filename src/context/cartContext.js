@@ -4,8 +4,6 @@ import { initialState } from "@/pages/initialState";
 import {
   readState,
   saveCart,
-  deleteCart,
-  updateProductQuantity,
   clearAllCart,
   removeItemFromCart,
 } from "@/pages/utils/axiosActions";
@@ -62,6 +60,10 @@ export const CartProvider = ({ children }) => {
     0
   );
 
+  //Calcula el total de la compra
+  const total = state.cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
+
+
   return (
     <CartContext.Provider
       value={{
@@ -70,6 +72,7 @@ export const CartProvider = ({ children }) => {
         addToCart,
         deleteFromCart,
         clearCart,
+        total,
         cartItemCount,
       }}
     >

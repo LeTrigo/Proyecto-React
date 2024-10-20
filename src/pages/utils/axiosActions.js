@@ -16,11 +16,6 @@ export const readState = async () => {
   };
 };
 
-// export const saveCart = async (product) => {
-//   await axios.post(ENDPOINTS.cart, product);
-//   readState();
-// };
-
 export const saveCart = async (product) => {
   const id = product.id;
   try {
@@ -29,7 +24,7 @@ export const saveCart = async (product) => {
 
     if (response.data.length > 0) {
       // Si el producto ya está en el carrito, incrementar su cantidad.
-      const productInCart = response.data[0]; // Corregir, ya que response.data es un array
+      const productInCart = response.data[0];
       const updatedProduct = {
         ...productInCart, // Mantener todas las propiedades del producto
         quantity: productInCart.quantity + 1, // Incrementar la cantidad en 1
@@ -113,105 +108,3 @@ export const clearAllCart = async () => {
     console.error("Error al limpiar el carrito:", error);
   }
 };
-// export const addOneItem = async (product) => {
-//   const id = product.id;
-//   const ENDPOINT = `http://localhost:5000/cart/${id}`;
-//   const OPTIONS = {
-//     method: "PUT",
-//     headers: { "Content-Type": "application/json" },
-//     data: product,
-//   };
-//   await axios(ENDPOINT, OPTIONS);
-// };
-
-// export const addOneItem = async (product) => {
-//   try {
-//     const id = product.id;
-//     const ENDPOINT = `http://localhost:5000/cart/${id}`;
-//     const OPTIONS = {
-//       method: "PUT",
-//       headers: { "Content-Type": "application/json" },
-//       data: product,
-//     };
-//     await axios(ENDPOINT, OPTIONS);
-//   } catch (error) {
-//     console.error("Error al agregar un producto al carrito:", error);
-//   }
-// };
-
-// export const deleteOneItem = async (product) => {
-//   const id = product.id;
-//   const ENDPOINT = `http://localhost:5000/cart/${id}`;
-//   await axios.delete(ENDPOINT);
-// };
-
-// export const deleteOneItem = async (product) => {
-//   try {
-//     const id = product.id;
-//     const ENDPOINT = `http://localhost:5000/cart/${product.id}`;
-//     await axios.delete(ENDPOINT);
-//   } catch (error) {
-//     console.error("Error al eliminar un producto del carrito:", error);
-//   }
-// };
-
-// export const deleteAllItemsWithSameId = async (product) => {
-//   const id = product.id;
-//   const confirmar = confirm(
-//     `¿Estás seguro que quieres eliminar el libro ${product.name}?`
-//   );
-
-//   if (confirmar) {
-//     const ENDPOINT = `http://localhost:5000/cart?id=${id}`;
-//     const OPTIONS = {
-//       method: "DELETE",
-//       headers: { "Content-Type": "application/json" },
-//     };
-//     await axios(ENDPOINT, OPTIONS);
-//   } else {
-//     return;
-//   }
-
-//   readState();
-// };
-
-// export const deleteAllItemsWithSameId = async (product) => {
-//   try {
-//     const id = product.id;
-//     const confirmar = confirm(
-//       `¿Estás seguro que quieres eliminar todos los productos ${product.name} del carrito?`
-//     );
-
-//     if (confirmar) {
-//       const ENDPOINT = `http://localhost:5000/cart?id=${id}`;
-//       const OPTIONS = {
-//         method: "DELETE",
-//         headers: { "Content-Type": "application/json" },
-//       };
-//       await axios(ENDPOINT, OPTIONS);
-//     } else {
-//       return;
-//     }
-
-//     readState();
-//   } catch (error) {
-//     console.error(
-//       "Error al eliminar todos los productos con el mismo ID:",
-//       error
-//     );
-//   }
-// };
-
-// export const deleteAllCartItems = async () => {
-//   const ENDPOINT = "http://localhost:5000/cart";
-//   await axios.delete(ENDPOINT);
-// };
-
-// export const deleteAllCartItems = async () => {
-//   try {
-//     const ENDPOINT = "http://localhost:5000/cart";
-//     await axios.delete(ENDPOINT);
-//   } catch (error) {
-//     console.error("Error al eliminar todos los productos del carrito:", error);
-//   }
-// };

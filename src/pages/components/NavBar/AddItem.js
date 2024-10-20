@@ -1,11 +1,7 @@
-import { CartContext } from '@/context/cartContext';
-import { useContext } from 'react';
+
 import Button from 'react-bootstrap/Button';
 
-
-
-
-const AddItem = (addToCart, book) => {
+const AddItem = ({addToCart, book}) => {
  
   return (
     <>

@@ -1,5 +1,4 @@
 import { CartProvider } from "@/context/cartContext";
-import CardContainer from "./components/cards/CardContainer";
 import Carrousel from "./components/carousel/Carrousel";
 import Cart from "./components/Cart";
 import Footer from "./components/footer/Footer";
@@ -15,7 +14,6 @@ export default function Home() {
     <CartProvider>
     <NavBar />
       <ProposelCard />
-      {/* <CardContainer /> */}
       <Cart/>
       <InfoCard />
       <Carrousel />
