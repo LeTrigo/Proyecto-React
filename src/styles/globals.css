@@ -566,6 +566,7 @@ main {
 .collapse {
   flex-direction: row !important;
   background-color: rgb(164, 235, 243) !important;
+  margin-top: 15px;
 }
 
 .cart-trigger-container {
