@@ -12,7 +12,10 @@ function CartOffCanvas() {
 
   return (
     <>
-      <Image className='cart-trigger' src="/img/cart-icon.png" onClick={handleShow}/>
+    <div className='cart-button-trigger' onClick={handleShow}>
+      <Image className='cart-trigger' src="/img/cart-icon.png" />
+      <dfn className='cart-text'>Tu carrito</dfn>
+    </div>
 
       <Offcanvas className="cart-container" show={show} onHide={handleClose} placement='end'>
         <Offcanvas.Header closeButton>

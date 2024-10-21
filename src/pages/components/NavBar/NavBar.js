@@ -2,11 +2,13 @@ import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import CartOffCanvas from "./CartOffCanvas";
 import { Image, NavDropdown } from "react-bootstrap";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { CartContext } from "@/context/cartContext";
+
 
 function NavBar() {
   const {cartItemCount} = useContext(CartContext)
+  
   
   return (
     <Navbar expand="lg" fixed="top" className="main-navbar">
@@ -17,26 +19,31 @@ function NavBar() {
           alt="logo book oasis"
         />
         <Navbar.Text className="navbar-title">Book Oasis</Navbar.Text>
-        <div className="navbar-menu" id>
-        <NavDropdown className="navbar-dropdown" title="Categorias" id="basic-nav-dropdown">
-          <NavDropdown.Item href="#action/3.1">Autoayuda</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.2">Comics</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.3">Computación y sistemas</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.4">Ficción y literatura</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.5">Infantil y juvenil</NavDropdown.Item>
-        </NavDropdown>
-        </div>
-        <Navbar.Toggle />
+        <div className="navbar-menu">
+            <NavDropdown className="navbar-dropdown" title="Categorias" id="basic-nav-dropdown">
+              <NavDropdown.Item href="#action/3.1">Autoayuda</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">Comics</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">Computación y sistemas</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.4">Ficción y literatura</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.5">Infantil y juvenil</NavDropdown.Item>
+            </NavDropdown>
+          </div>
         <Navbar.Collapse className="justify-content-end">
-          <div className="search-trigger">
-            <Image className="search-icon" src="./img/search-icon.png" />
-          </div>
-          <div className="user-trigger">
-            <Image className="user-icon" src="./img/user-icon.png" />
-          </div>
-          <CartOffCanvas />
-          <span>{cartItemCount}</span>
-        </Navbar.Collapse>
+
+            <div className="search-trigger">
+              <Image className="search-icon" src="./img/search-icon.png" />
+              <dfn className="trigger-text">Buscar</dfn>
+            </div>
+            <div className="user-trigger">
+              <Image className="user-icon" src="./img/user-icon.png" />
+              <dfn className="trigger-text">Iniciar sesion</dfn>
+            </div>
+            <div className="cart-trigger-container">
+              <CartOffCanvas />
+              <dfn className="cart-item-count">{cartItemCount}</dfn>
+
+            </div>
+          </Navbar.Collapse>
       </Container>
     </Navbar>
   );

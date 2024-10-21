@@ -16,10 +16,9 @@ const CartItem = ( {item}) => {
     <>
     <div className="cart-item">
         <div className="cart-product"> 
-            <img src={image} alt="producto" />
-           
+            <img src={image} alt="producto" /> 
         </div>
-        <p>{name}</p>
+        <p className="cart-product-title">{name}</p>
           <div className="cart-product-description">
             <dfn>${price * quantity}</dfn>
           </div>

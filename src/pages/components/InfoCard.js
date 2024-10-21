@@ -12,7 +12,7 @@ const InfoCard = () => {
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet"
       />
-      <Container fluid className="container border">
+      <Container fluid className="info-container">
         {" "}
         <Row>
           <Col ClassName="info__container" sm={12} md={6}>
