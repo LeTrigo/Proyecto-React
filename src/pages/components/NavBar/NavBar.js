@@ -12,7 +12,7 @@ function NavBar() {
   
   return (
     <Navbar expand="lg" fixed="top" className="main-navbar">
-      <Container fluid>
+      <Container className="nav-container" fluid>
         <img
           className="navbar-logo"
           src="./img/Logo.jpeg"
