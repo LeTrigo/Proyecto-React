@@ -19,24 +19,25 @@ function NavBar() {
           alt="logo book oasis"
         />
         <Navbar.Text className="navbar-title">Book Oasis</Navbar.Text>
-        <div className="navbar-menu">
-            <NavDropdown className="navbar-dropdown" title="Categorias" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Autoayuda</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Comics</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Computación y sistemas</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.4">Ficción y literatura</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.5">Infantil y juvenil</NavDropdown.Item>
-            </NavDropdown>
-          </div>
+        <NavDropdown className="navbar-dropdown" title="Categorias" id="basic-nav-dropdown">
+          <NavDropdown.Item href="#action/3.1">Autoayuda</NavDropdown.Item>
+          <NavDropdown.Item href="#action/3.2">Comics</NavDropdown.Item>
+          <NavDropdown.Item href="#action/3.3">Computación y sistemas</NavDropdown.Item>
+          <NavDropdown.Item href="#action/3.4">Ficción y literatura</NavDropdown.Item>
+          <NavDropdown.Item href="#action/3.5">Infantil y juvenil</NavDropdown.Item>
+        </NavDropdown>
+        <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
+          <div className="navbar-menu">
 
+          </div>
             <div className="search-trigger">
               <Image className="search-icon" src="./img/search-icon.png" />
-              <dfn className="trigger-text">Buscar</dfn>
+              <dfn>Buscar</dfn>
             </div>
             <div className="user-trigger">
               <Image className="user-icon" src="./img/user-icon.png" />
-              <dfn className="trigger-text">Iniciar sesion</dfn>
+              <dfn>Iniciar sesion</dfn>
             </div>
             <div className="cart-trigger-container">
               <CartOffCanvas />
