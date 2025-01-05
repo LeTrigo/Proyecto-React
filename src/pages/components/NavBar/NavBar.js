@@ -1,9 +1,11 @@
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import CartOffCanvas from "./CartOffCanvas";
-import { Image, NavDropdown } from "react-bootstrap";
+import {  NavDropdown } from "react-bootstrap";
 import { useContext, useState } from "react";
 import { CartContext } from "@/context/cartContext";
+import Image from 'next/image';
+
 
 
 function NavBar() {
@@ -13,7 +15,7 @@ function NavBar() {
   return (
     <Navbar expand="lg" fixed="top" className="main-navbar">
       <Container className="nav-container" fluid>
-        <img
+        <Image
           className="navbar-logo"
           src="./img/Logo.jpeg"
           alt="logo book oasis"
@@ -32,11 +34,11 @@ function NavBar() {
 
           </div>
             <div className="search-trigger">
-              <Image className="search-icon" src="./img/search-icon.png" />
+              <Image className="search-icon" src="./img/search-icon.png" alt="search icon" />
               <dfn>Buscar</dfn>
             </div>
             <div className="user-trigger">
-              <Image className="user-icon" src="./img/user-icon.png" />
+              <Image className="user-icon" src="./img/user-icon.png" alt="user icon" />
               <dfn>Iniciar sesion</dfn>
             </div>
             <div className="cart-trigger-container">

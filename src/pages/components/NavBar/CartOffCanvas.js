@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import { Image } from 'react-bootstrap';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import ShoppingSection from './ShoppingSection';
 import CartPrice from './CartPrice';
+import Image from 'next/image';
+
 
 function CartOffCanvas() {
   const [show, setShow] = useState(false);
@@ -13,7 +14,7 @@ function CartOffCanvas() {
   return (
     <>
     <div className='cart-button-trigger' onClick={handleShow}>
-      <Image className='cart-trigger' src="/img/cart-icon.png" />
+      <Image className='cart-trigger' src="/img/cart-icon.png" alt="cart icon" />
       <dfn className='cart-text'>Tu carrito</dfn>
     </div>
 

@@ -4,6 +4,8 @@ import DeleteItem from "./DeleteItem"
 import { useContext } from "react"
 import { CartContext } from "@/context/cartContext"
 import CartCounter from "./CartCounter"
+import Image from 'next/image';
+
 
 
 
@@ -16,7 +18,7 @@ const CartItem = ( {item}) => {
     <>
     <div className="cart-item">
         <div className="cart-product"> 
-            <img src={image} alt="producto" /> 
+            <Image src={image} alt="producto" /> 
         </div>
         <p className="cart-product-title">{name}</p>
           <div className="cart-product-description">

@@ -1,5 +1,7 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
+import Image from 'next/image';
+
 
 const imageSources = [
   { id: 1, src: './img/Logo.jpeg'},
@@ -20,9 +22,10 @@ const Carrousel = () => (
       {imageSources.map(img => (
         <Carousel.Item key={img.id}>
           <row className="carousel-item">
-          <img
+          <Image
             className="carousel-img d-block w-100"
             src={img.src}
+            alt="First slide"
           />
           </row>
         </Carousel.Item>

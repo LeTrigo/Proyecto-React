@@ -1,13 +1,13 @@
 import React, { createContext, useReducer, useEffect } from "react";
 import { cartReducer } from "@/pages/reducer/cartReducer";
-import { initialState } from "@/pages/initialState";
+import { initialState } from "@/initialState/initialState";
 import {
   readState,
   saveCart,
   clearAllCart,
   removeItemFromCart,
-} from "@/pages/utils/axiosActions";
-import { TYPES } from "@/pages/actions/actions";
+} from "@/utils/axiosActions";
+import { TYPES } from "@/actions/actions";
 
 const {
   READ_STATE,
@@ -61,8 +61,10 @@ export const CartProvider = ({ children }) => {
   );
 
   //Calcula el total de la compra
-  const total = state.cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
-
+  const total = state.cart.reduce(
+    (acc, item) => acc + item.price * item.quantity,
+    0
+  );
 
   return (
     <CartContext.Provider

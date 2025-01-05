@@ -1,6 +1,8 @@
 import { Container, Row, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import SocialIcons from './SocialIcons';
+import Image from 'next/image';
+
 
 const Footer = () => {
     return (
@@ -9,7 +11,7 @@ const Footer = () => {
                 <Container>
                     <Row>
                         <Col className='d-flex justify-content-center' xs={12} md={3}>
-                            <img src='./Logo.jpeg' alt='Logo' className='img-fluid rounded-circle' />
+                            <Image src='./Logo.jpeg' alt='Logo' className='img-fluid rounded-circle' />
                         </Col>
                         <Col xs={12} md={3}>
                             <h5 className='p-2'>Sobre Nosotros</h5>

@@ -1,17 +1,13 @@
 import React from "react";
-import { Container, Row, Col, Image } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import { BsCheck2Circle } from "react-icons/bs";
 import Button from "react-bootstrap/Button";
+import Image from 'next/image';
+
 
 const InfoCard = () => {
   return (
-    <>
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet"
-      />
+    <> 
       <Container fluid className="info-container">
         {" "}
         <Row>
@@ -65,7 +61,7 @@ const InfoCard = () => {
           >
             {" "}
             <div className="image__container ">
-              <img className="image" src="/img/carousel2.jpeg" />
+              <Image className="image" src="/img/carousel2.jpeg" alt="" />
             </div>
           </Col>
         </Row>

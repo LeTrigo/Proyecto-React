@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Image } from 'react-bootstrap';
+import Image from 'next/image';
+
 
 function CartOffCanvas() {
   const [show, setShow] = useState(false);
@@ -9,7 +10,7 @@ function CartOffCanvas() {
 
   return (
     <>
-      <Image className='cart-trigger' src="/img/search-icon.png" onClick={handleShow}/>
+      <Image className='cart-trigger' src="/img/search-icon.png" onClick={handleShow} alt="search icon"/>
     </>
   );
 }
