@@ -1,5 +1,6 @@
 import React, { createContext, useReducer, useEffect } from "react";
-import { cartReducer } from "@/pages/reducer/cartReducer";
+import { cartReducer } from "@/reducer/cartReducer";
+
 import { initialState } from "@/initialState/initialState";
 import {
   readState,

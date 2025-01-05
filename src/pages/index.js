@@ -7,22 +7,17 @@ import NavBar from "./components/NavBar/NavBar";
 import ProposelCard from "./components/ProposelCard";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-
 export default function Home() {
   return (
     <>
-    <CartProvider>
-    <NavBar />
-      <ProposelCard />
-      <Cart/>
-      <InfoCard />
-      <Carrousel />
-      <Footer />
-    </CartProvider>
-     
+      <CartProvider>
+        <NavBar />
+        <ProposelCard />
+        <Cart />
+        <InfoCard />
+        <Carrousel />
+        <Footer />
+      </CartProvider>
     </>
-
   );
 }
-
-
