@@ -1,4 +1,4 @@
-import { TYPES } from "../../actions/actions";
+import { TYPES } from "@/actions/actions";
 
 const {
   READ_STATE,
