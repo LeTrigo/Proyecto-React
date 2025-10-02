@@ -1,41 +1,59 @@
-import AddItem from "./AddItem"
-import DeleteAllItems from "./DeleteAllItems"
-import DeleteItem from "./DeleteItem"
-import { useContext } from "react"
-import { CartContext } from "@/context/cartContext"
-import CartCounter from "./CartCounter"
-import Image from 'next/image';
+import AddItem from "./AddItem";
+import DeleteAllItems from "./DeleteAllItems";
+import DeleteItem from "./DeleteItem";
+import { useContext } from "react";
+import { CartContext } from "@/context/cartContext";
+import CartCounter from "./CartCounter";
+import Image from "next/image";
 
+const CartItem = ({ item }) => {
+  const { addToCart, deleteFromCart } = useContext(CartContext);
 
-
-
-const CartItem = ( {item}) => {
-  const {addToCart, deleteFromCart} = useContext(CartContext)
-
-  const {name, quantity, image, price, id} = item
+  const { name, quantity, image, price, id } = item;
 
   return (
     <>
-    <div className="cart-item">
-        <div className="cart-product"> 
-            <Image src={image} alt="producto" /> 
-        </div>
-        <p className="cart-product-title">{name}</p>
-          <div className="cart-product-description">
-            <dfn>${price * quantity}</dfn>
+      <div className="modern-cart-item">
+        <div className="cart-item-header">
+          <div className="cart-item-image">
+            <Image
+              src={image}
+              alt={name}
+              width={60}
+              height={75}
+              className="cart-product-img"
+            />
           </div>
-        <div className="delete-buttons">
-          <DeleteItem deleteFromCart={deleteFromCart} book={item}/>
-          <CartCounter quantity={quantity}/>
-         
-          <AddItem  addToCart={addToCart} book={item} />
-        </div>
-        <div className="DeleteAllItems">
-          <DeleteAllItems deleteFromCart={deleteFromCart} book={item}/>
-        </div>
-    </div>
-    </>
-  )
-}
 
-export default CartItem
+          <div className="cart-item-content">
+            <h6 className="cart-item-title">{name}</h6>
+            <div className="cart-item-price">
+              <span className="price-label">Precio unitario:</span>
+              <span className="unit-price">${price.toLocaleString()}</span>
+            </div>
+            <div className="cart-item-total">
+              <span className="total-label">Total:</span>
+              <span className="total-price">
+                ${(price * quantity).toLocaleString()}
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div className="cart-item-controls">
+          <div className="quantity-controls">
+            <DeleteItem deleteFromCart={deleteFromCart} book={item} />
+            <CartCounter quantity={quantity} />
+            <AddItem addToCart={addToCart} book={item} />
+          </div>
+
+          <div className="remove-item">
+            <DeleteAllItems deleteFromCart={deleteFromCart} book={item} />
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default CartItem;

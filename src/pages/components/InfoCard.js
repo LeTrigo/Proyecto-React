@@ -2,12 +2,11 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { BsCheck2Circle } from "react-icons/bs";
 import Button from "react-bootstrap/Button";
-import Image from 'next/image';
-
+import Image from "next/image";
 
 const InfoCard = () => {
   return (
-    <> 
+    <>
       <Container fluid className="info-container">
         {" "}
         <Row>
@@ -61,7 +60,13 @@ const InfoCard = () => {
           >
             {" "}
             <div className="image__container ">
-              <Image className="image" src="/img/carousel2.jpeg" alt="" />
+              <Image
+                className="image"
+                src="/img/carousel2.jpeg"
+                alt=""
+                width={400}
+                height={300}
+              />
             </div>
           </Col>
         </Row>

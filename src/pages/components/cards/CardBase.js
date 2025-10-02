@@ -2,30 +2,40 @@ import Card from "react-bootstrap/Card";
 import BuyButton from "../button/BuyButton";
 import { useContext } from "react";
 import { CartContext } from "@/context/cartContext";
-
-
-
+import Image from "next/image";
 
 const CardBase = (props) => {
-  const {addToCart} = useContext(CartContext)
+  const { addToCart } = useContext(CartContext);
 
-  const { image, name, description, price} = props.book
+  const { image, name, description, price } = props.book;
 
   return (
     <>
-      <Card className="card-base" style={{ width: "18rem" }}>
-        <Card.Img className="card-image" src={image} />
-        <Card.Body className="card-body">
-          <Card.Title>{name}</Card.Title>
-          <Card.Text>{description}</Card.Text>
-          <Card.Text>Precio ${price}</Card.Text>
-          <BuyButton className='card-button' addToCart={addToCart} book={props.book} />
-
+      <Card className="product-card">
+        <div className="card-image-container">
+          <Image
+            className="product-image"
+            src={image}
+            alt={name}
+            width={280}
+            height={350}
+          />
+          <div className="price-badge">${price.toLocaleString()}</div>
+        </div>
+        <Card.Body className="product-card-body">
+          <Card.Title className="product-title">{name}</Card.Title>
+          <Card.Text className="product-description">{description}</Card.Text>
+          <div className="card-actions">
+            <BuyButton
+              className="product-buy-button"
+              addToCart={addToCart}
+              book={props.book}
+            />
+          </div>
         </Card.Body>
       </Card>
     </>
   );
-}
+};
 
-export default CardBase
-
+export default CardBase;

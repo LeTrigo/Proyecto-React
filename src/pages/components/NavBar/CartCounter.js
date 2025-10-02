@@ -1,14 +1,11 @@
-
-
-
-
-
-const CartCounter = ({quantity}) => {
+const CartCounter = ({ quantity }) => {
   return (
     <>
-      <span className='cart-counter'>{quantity}</span>
+      <div className="modern-cart-counter">
+        <span className="quantity-number">{quantity}</span>
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default CartCounter
+export default CartCounter;

@@ -1,15 +1,18 @@
-import Button from 'react-bootstrap/Button';
+import Button from "react-bootstrap/Button";
 
-
-
-
-function BuyButton({addToCart, book}) {
-
+function BuyButton({ addToCart, book }) {
   return (
     <>
-    <Button onClick={()=> addToCart(book) }className='buy-button'  >Comprar</Button>{' '} 
+      <Button
+        onClick={() => addToCart(book)}
+        className="modern-buy-button"
+        variant="primary"
+        size="lg"
+      >
+        Agregar al Carrito
+      </Button>
     </>
   );
 }
 
-export default BuyButton
+export default BuyButton;

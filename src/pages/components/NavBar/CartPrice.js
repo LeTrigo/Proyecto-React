@@ -1,21 +1,29 @@
-import ClearCartButton from "./ClearCartButton"
-import { useContext } from "react"
-import { CartContext } from "@/context/cartContext"
+import ClearCartButton from "./ClearCartButton";
+import { useContext } from "react";
+import { CartContext } from "@/context/cartContext";
 
-
-
-const CartPrice = ({clearCart}) => {
-  const {total} = useContext(CartContext)
+const CartPrice = ({ clearCart }) => {
+  const { total } = useContext(CartContext);
   return (
     <>
-        <div className="cart-price">
-            <div className="cart-price-text">
-                <p>El costo de tu compra es: ${total.toFixed(2)} </p>
-            </div>
-            <ClearCartButton className="clear-cart-button" clearCart={clearCart} />
+      <div className="modern-cart-summary">
+        <div className="cart-total-section">
+          <div className="total-label-container">
+            <span className="total-label">Total de tu compra:</span>
+          </div>
+          <div className="total-amount-container">
+            <span className="total-amount">${total.toLocaleString()}</span>
+          </div>
         </div>
+        <div className="cart-actions-section">
+          <ClearCartButton
+            className="modern-clear-cart-button"
+            clearCart={clearCart}
+          />
+        </div>
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default CartPrice
+export default CartPrice;
