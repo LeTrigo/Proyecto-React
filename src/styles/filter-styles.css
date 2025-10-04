@@ -1,0 +1,137 @@
+/* Filter Section Styles - Modern Design */
+.filter-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 2rem;
+  border-radius: 15px;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(68, 190, 212, 0.1);
+}
+
+.category-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.category-filters .btn {
+  border-radius: 25px;
+  padding: 0.5rem 1.5rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.category-filters .btn-primary {
+  background: linear-gradient(135deg, #44bed4 0%, #3aaac0 100%);
+  border-color: #44bed4;
+  color: white;
+  box-shadow: 0 4px 15px rgba(68, 190, 212, 0.3);
+}
+
+.category-filters .btn-outline-primary {
+  background: white;
+  border-color: #44bed4;
+  color: #44bed4;
+}
+
+.category-filters .btn-outline-primary:hover {
+  background: linear-gradient(135deg, #44bed4 0%, #3aaac0 100%);
+  border-color: #44bed4;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(68, 190, 212, 0.4);
+}
+
+.category-filters .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(68, 190, 212, 0.5);
+}
+
+.search-section {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.search-section .form-control {
+  border-radius: 25px;
+  border: 2px solid #e9ecef;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.search-section .form-control:focus {
+  border-color: #44bed4;
+  box-shadow: 0 0 0 0.2rem rgba(68, 190, 212, 0.25);
+  outline: none;
+}
+
+.search-section .btn {
+  border-radius: 25px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  border: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+}
+
+.search-section .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+  .filter-section {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .category-filters {
+    margin-bottom: 1.5rem;
+    justify-content: center;
+  }
+
+  .category-filters .btn {
+    padding: 0.4rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .search-section {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .search-section .form-control {
+    width: 100%;
+  }
+
+  .search-section .btn {
+    width: 100%;
+    padding: 0.75rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .filter-section {
+    padding: 1rem;
+    border-radius: 10px;
+  }
+
+  .category-filters {
+    gap: 0.5rem;
+  }
+
+  .category-filters .btn {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.85rem;
+  }
+}

@@ -7,9 +7,9 @@ const imageSources = [
   { id: 2, src: "/img/carousel2.jpeg" },
   { id: 3, src: "/img/carousel3.avif" },
   { id: 4, src: "/img/carousel4.jpeg" },
-  { id: 5, src: "/img/carousel5.jpeg" },
-  { id: 6, src: "/img/carousel6.jpeg" },
-  { id: 7, src: "/img/carousel7.jpeg" },
+  { id: 5, src: "/img/carousel5.jpg" },
+  { id: 6, src: "/img/carousel6.jpg" },
+  { id: 7, src: "/img/carousel7.jpg" },
   { id: 8, src: "/img/carousel8.jpg" },
 ];
 
@@ -24,7 +24,7 @@ const Carrousel = () => (
               src={img.src}
               alt="First slide"
               width={800}
-              height={400}
+              height={550}
             />
           </row>
         </Carousel.Item>
@@ -35,6 +35,8 @@ const Carrousel = () => (
       .carousel-img {
         height: 20vh;
         width: 80vh !important;
+
+        object-fit: contain;
       }
 
       .carousel-item {

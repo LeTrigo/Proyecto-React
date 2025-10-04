@@ -1,4 +1,5 @@
 import ClearCartButton from "./ClearCartButton";
+import CheckoutButton from "../checkout/CheckoutButton";
 import { useContext } from "react";
 import { CartContext } from "@/context/cartContext";
 
@@ -22,6 +23,7 @@ const CartPrice = ({ clearCart }) => {
           />
         </div>
       </div>
+      <CheckoutButton />
     </>
   );
 };

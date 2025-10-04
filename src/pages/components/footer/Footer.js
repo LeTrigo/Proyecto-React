@@ -6,65 +6,98 @@ import Image from "next/image";
 const Footer = () => {
   return (
     <>
-      <footer>
-        <Container>
-          <Row>
-            <Col className="d-flex justify-content-center" xs={12} md={3}>
-              <Image
-                src="/Logo.jpeg"
-                alt="Logo"
-                className="img-fluid rounded-circle"
-                width={80}
-                height={80}
-              />
-            </Col>
-            <Col xs={12} md={3}>
-              <h5 className="p-2">Sobre Nosotros</h5>
-              <p>
-                Somos una librería con una gran variedad de libros para todas
-                las edades y gustos.
+      <footer className="modern-footer">
+        <Container className="modern-footer-container">
+          {/* Main Footer Content */}
+          <Row className="footer-main-content">
+            {/* Brand Section */}
+            <Col xs={12} md={6} lg={3} className="footer-brand-section">
+              <div className="footer-logo-container">
+                <Image
+                  src="/Logo.jpeg"
+                  alt="Book Oasis Logo"
+                  className="footer-logo"
+                  width={80}
+                  height={80}
+                />
+                <h4 className="footer-brand-name">Book Oasis</h4>
+              </div>
+              <p className="footer-brand-description">
+                Tu destino favorito para descubrir historias extraordinarias.
+                Libros que inspiran, educan y entretienen para todas las edades.
               </p>
-              <ul className="list-unstyled">
-                <li>Condiciones de uso</li>
-                <li>Políticas de privacidad</li>
+            </Col>
+
+            {/* About Section */}
+            <Col xs={12} md={6} lg={3} className="footer-section">
+              <h5 className="footer-section-title">Sobre Nosotros</h5>
+              <ul className="footer-links">
+                <li>
+                  <a href="#about">Nuestra Historia</a>
+                </li>
+                <li>
+                  <a href="#mission">Misión y Visión</a>
+                </li>
+                <li>
+                  <a href="#terms">Condiciones de Uso</a>
+                </li>
+                <li>
+                  <a href="#privacy">Políticas de Privacidad</a>
+                </li>
               </ul>
             </Col>
-            <Col xs={12} md={3}>
-              <h5 className="p-2">Ayuda</h5>
-              <ul className="list-unstyled">
-                <li>Medios de pago</li>
-                <li>Formas de envío</li>
-                <li>Estado de tu pedido</li>
-                <li>Devoluciones</li>
+
+            {/* Help Section */}
+            <Col xs={12} md={6} lg={3} className="footer-section">
+              <h5 className="footer-section-title">Centro de Ayuda</h5>
+              <ul className="footer-links">
+                <li>
+                  <a href="#payment">Medios de Pago</a>
+                </li>
+                <li>
+                  <a href="#shipping">Formas de Envío</a>
+                </li>
+                <li>
+                  <a href="#orders">Estado de Pedidos</a>
+                </li>
+                <li>
+                  <a href="#returns">Devoluciones</a>
+                </li>
+                <li>
+                  <a href="#faq">Preguntas Frecuentes</a>
+                </li>
               </ul>
             </Col>
-            <Col xs={12} md={3}>
-              <h5 className="p-2">¡Síguenos en nuestras redes!</h5>
-              <SocialIcons />
+
+            {/* Social Section */}
+            <Col xs={12} md={6} lg={3} className="footer-section">
+              <h5 className="footer-section-title">Síguenos</h5>
+              <p className="social-description">
+                Mantente al día con nuestras novedades y recomendaciones
+              </p>
+              <div className="footer-social-container">
+                <SocialIcons />
+              </div>
             </Col>
           </Row>
+
+          {/* Footer Bottom */}
+          <div className="footer-bottom">
+            <Row className="align-items-center">
+              <Col xs={12} md={6} className="footer-copyright">
+                <p>&copy; 2025 Book Oasis. Todos los derechos reservados.</p>
+              </Col>
+              <Col xs={12} md={6} className="footer-bottom-links">
+                <div className="bottom-links">
+                  <a href="#contact">Contacto</a>
+                  <a href="#sitemap">Mapa del Sitio</a>
+                  <a href="#accessibility">Accesibilidad</a>
+                </div>
+              </Col>
+            </Row>
+          </div>
         </Container>
       </footer>
-
-      <style jsx>{`
-        footer {
-          background-color: #44bed4;
-          color: #021f3f;
-          padding: 20px 0;
-        }
-        img {
-          height: auto;
-          width: 200px;
-          border-radius: 50%;
-        }
-        h5 {
-          margin-bottom: 10px;
-        }
-        li {
-          cursor: pointer;
-          margin-bottom: 5px;
-        }
-      `}</style>
     </>
   );
 };
