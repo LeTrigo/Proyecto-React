@@ -3,7 +3,9 @@ import { useContext } from "react";
 import Button from "react-bootstrap/Button";
 
 function ClearCartButton() {
-  const { clearCart } = useContext(CartContext);
+  const cartContext = useContext(CartContext);
+  if (!cartContext) return null;
+  const { clearCart } = cartContext;
   return (
     <>
       <Button

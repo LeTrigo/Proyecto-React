@@ -5,8 +5,11 @@ import { CartContext } from "@/context/cartContext";
 import Image from "next/image";
 
 const CardBase = (props) => {
-  const { addToCart } = useContext(CartContext);
+  const cartContext = useContext(CartContext);
+  if (!cartContext) return null;
+  const { addToCart } = cartContext;
 
+  if (!props || !props.book) return null;
   const { image, name, description, price } = props.book;
 
   return (
