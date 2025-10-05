@@ -1,0 +1,16 @@
+{
+  "name": "backend-api",
+  "version": "1.0.0",
+  "description": "JSON Server API for Book Store",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "json-server --port 5000 --watch ../src/db/db.json"
+  },
+  "dependencies": {
+    "json-server": "^1.0.0-beta.2"
+  },
+  "engines": {
+    "node": ">=16"
+  }
+}
