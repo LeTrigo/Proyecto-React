@@ -1,15 +1,36 @@
+// Componentes de React Bootstrap para navegación
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
+// Componente del carrito lateral (off-canvas)
 import CartOffCanvas from "./CartOffCanvas";
+// Hook de React para acceso al contexto
 import { useContext } from "react";
+// Contexto global del carrito
 import { CartContext } from "@/context/cartContext";
+// Componente de imagen optimizada de Next.js
 import Image from "next/image";
 
+/**
+ * Componente de barra de navegación principal
+ * Incluye logo, título, botones de acción y contador del carrito
+ * Implementa navegación suave hacia la sección de productos
+ *
+ * @component
+ * @returns {JSX.Element|null} Barra de navegación o null si no hay contexto
+ *
+ * @example
+ * <NavBar />
+ */
 function NavBar() {
+  // Acceso al contexto del carrito con validación SSR
   const cartContext = useContext(CartContext);
   if (!cartContext) return null;
   const { cartItemCount } = cartContext;
 
+  /**
+   * Navega suavemente hasta la sección de productos
+   * Utiliza scrollIntoView para una transición animada
+   */
   const scrollToCards = () => {
     const cardsSection = document.getElementById("cards-section");
     if (cardsSection) {
@@ -20,7 +41,7 @@ function NavBar() {
   return (
     <Navbar expand="lg" fixed="top" className="modern-navbar">
       <Container className="modern-nav-container" fluid>
-        {/* Brand Section */}
+        {/* Sección del Brand/Logo */}
         <div className="navbar-brand-section">
           <Image
             className="modern-navbar-logo"
@@ -34,8 +55,9 @@ function NavBar() {
           </Navbar.Brand>
         </div>
 
-        {/* Action Items */}
+        {/* Elementos de Acción */}
         <div className="navbar-actions">
+          {/* Botón de búsqueda que navega a la sección de productos */}
           <div
             className="modern-search-trigger"
             onClick={() => {
@@ -54,6 +76,7 @@ function NavBar() {
             <span className="action-label">Buscar</span>
           </div>
 
+          {/* Botón de cuenta de usuario (funcionalidad futura) */}
           <div className="modern-user-trigger">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
               <path
@@ -74,6 +97,7 @@ function NavBar() {
             <span className="action-label">Cuenta</span>
           </div>
 
+          {/* Contenedor del carrito con badge de conteo */}
           <div className="modern-cart-trigger-container">
             <CartOffCanvas />
             {cartItemCount > 0 && (

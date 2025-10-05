@@ -672,13 +672,13 @@ main {
 /* Card Body */
 .product-card-body {
   padding: 1.5rem !important;
-  background: white;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
 }
 
 .product-title {
   font-size: 1.1rem !important;
   font-weight: 600 !important;
-  color: #1a202c;
+  color: #ffffff !important;
   margin-bottom: 0.75rem !important;
   line-height: 1.4;
   display: -webkit-box;
@@ -690,7 +690,7 @@ main {
 
 .product-description {
   font-size: 0.9rem !important;
-  color: #64748b;
+  color: #cbd5e1 !important;
   line-height: 1.5;
   margin-bottom: 1.5rem !important;
   display: -webkit-box;
