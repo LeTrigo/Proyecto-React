@@ -3,8 +3,10 @@ import CartItem from "./CartItem";
 import { CartContext } from "@/context/cartContext";
 
 const ShoppingSection = () => {
-  const { state, addToCart, deleteFromCart } = useContext(CartContext);
-  const { cart } = state;
+  const cartContext = useContext(CartContext);
+  if (!cartContext) return null;
+  const { state, addToCart, deleteFromCart } = cartContext;
+  const cart = state?.cart || [];
 
   return (
     <>

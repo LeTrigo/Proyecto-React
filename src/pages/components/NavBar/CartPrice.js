@@ -4,7 +4,9 @@ import { useContext } from "react";
 import { CartContext } from "@/context/cartContext";
 
 const CartPrice = ({ clearCart }) => {
-  const { total } = useContext(CartContext);
+  const cartContext = useContext(CartContext);
+  if (!cartContext) return null;
+  const { total } = cartContext;
   return (
     <>
       <div className="modern-cart-summary">
@@ -13,7 +15,9 @@ const CartPrice = ({ clearCart }) => {
             <span className="total-label">Total de tu compra:</span>
           </div>
           <div className="total-amount-container">
-            <span className="total-amount">${total.toLocaleString()}</span>
+            <span className="total-amount">
+              ${total ? total.toLocaleString() : 0}
+            </span>
           </div>
         </div>
         <div className="cart-actions-section">

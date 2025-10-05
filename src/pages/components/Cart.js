@@ -3,9 +3,10 @@ import { CartContext } from "@/context/cartContext";
 import CardContainer from "./cards/CardContainer";
 
 const Cart = () => {
-  const { state } = useContext(CartContext);
-
-  const { products } = state;
+  const cartContext = useContext(CartContext);
+  if (!cartContext) return null;
+  const { state } = cartContext;
+  const products = state?.products || [];
 
   return (
     <>

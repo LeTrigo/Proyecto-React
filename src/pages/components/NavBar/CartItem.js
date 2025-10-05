@@ -7,8 +7,11 @@ import CartCounter from "./CartCounter";
 import Image from "next/image";
 
 const CartItem = ({ item }) => {
-  const { addToCart, deleteFromCart } = useContext(CartContext);
+  const cartContext = useContext(CartContext);
+  if (!cartContext) return null;
+  const { addToCart, deleteFromCart } = cartContext;
 
+  if (!item) return null;
   const { name, quantity, image, price, id } = item;
 
   return (

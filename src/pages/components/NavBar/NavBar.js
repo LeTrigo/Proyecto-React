@@ -6,7 +6,9 @@ import { CartContext } from "@/context/cartContext";
 import Image from "next/image";
 
 function NavBar() {
-  const { cartItemCount } = useContext(CartContext);
+  const cartContext = useContext(CartContext);
+  if (!cartContext) return null;
+  const { cartItemCount } = cartContext;
 
   const scrollToCards = () => {
     const cardsSection = document.getElementById("cards-section");

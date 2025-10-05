@@ -5,8 +5,10 @@ import CheckoutModal from "../checkout/CheckoutModal";
 import SuccessToast from "./SuccessToast";
 
 const CheckoutButton = () => {
-  const { state } = useContext(CartContext);
-  const { cart } = state;
+  const cartContext = useContext(CartContext);
+  if (!cartContext) return null;
+  const { state } = cartContext;
+  const cart = state?.cart || [];
   const [showCheckout, setShowCheckout] = useState(false);
   const [showSuccessToast, setShowSuccessToast] = useState(false);
   const [orderData, setOrderData] = useState({

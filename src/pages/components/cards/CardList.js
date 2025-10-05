@@ -126,12 +126,12 @@ const CardList = (props) => {
 
         {/* Products Grid */}
         <div className="products-grid">
-          {filteredBooks.map((book) => (
+          {(filteredBooks || []).map((book) => (
             <CardBase book={book} key={book.id} />
           ))}
         </div>
 
-        {filteredBooks.length === 0 && (
+        {(!filteredBooks || filteredBooks.length === 0) && (
           <div className="text-center mt-4">
             <p>No se encontraron libros que coincidan con tu búsqueda.</p>
           </div>

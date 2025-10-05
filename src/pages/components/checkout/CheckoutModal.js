@@ -3,8 +3,10 @@ import { Modal, Form, Button, Row, Col, Alert } from "react-bootstrap";
 import { CartContext } from "@/context/cartContext";
 
 const CheckoutModal = ({ show, onHide, onOrderSuccess }) => {
-  const { state, total, clearCart } = useContext(CartContext);
-  const { cart } = state;
+  const cartContext = useContext(CartContext);
+  if (!cartContext) return null;
+  const { state, total, clearCart } = cartContext;
+  const cart = state?.cart || [];
 
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
