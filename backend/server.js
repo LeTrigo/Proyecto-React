@@ -20,19 +20,7 @@ const middlewares = jsonServer.defaults({
   static: path.join(__dirname, "public"),
 });
 
-server.use(middlewares);
-
-// Ruta de diagnóstico
-server.get("/health", (req, res) => {
-  res.json({
-    status: "OK",
-    timestamp: new Date().toISOString(),
-    dbPath: path.join(__dirname, "db.json"),
-    dbExists: fs.existsSync(path.join(__dirname, "db.json")),
-  });
-});
-
-// Enable CORS for all routes
+// CORS middleware - DEBE ir ANTES que los otros middlewares
 server.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
   res.header(
@@ -43,7 +31,25 @@ server.use((req, res, next) => {
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept, Authorization"
   );
-  next();
+  
+  // Handle preflight requests
+  if (req.method === 'OPTIONS') {
+    res.sendStatus(200);
+  } else {
+    next();
+  }
+});
+
+server.use(middlewares);
+
+// Ruta de diagnóstico
+server.get("/health", (req, res) => {
+  res.json({
+    status: "OK",
+    timestamp: new Date().toISOString(),
+    dbPath: path.join(__dirname, "db.json"),
+    dbExists: fs.existsSync(path.join(__dirname, "db.json")),
+  });
 });
 
 server.use(router);
