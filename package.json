@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "cartAPI": "json-server --port 5000 --watch src/db/db.json"
+    "cartAPI": "json-server --port 5000 --watch src/db/db.json",
+    "backend": "node server.js"
   },
   "dependencies": {
     "axios": "^1.7.7",
