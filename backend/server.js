@@ -11,7 +11,7 @@ console.log("Looking for db.json at:", dbPath);
 console.log("File exists:", fs.existsSync(dbPath));
 
 if (fs.existsSync(dbPath)) {
-  const dbContent = fs.readFileSync(dbPath, 'utf8');
+  const dbContent = fs.readFileSync(dbPath, "utf8");
   console.log("DB content preview:", dbContent.substring(0, 200) + "...");
 }
 
@@ -23,12 +23,12 @@ const middlewares = jsonServer.defaults({
 server.use(middlewares);
 
 // Ruta de diagnóstico
-server.get('/health', (req, res) => {
-  res.json({ 
-    status: 'OK', 
+server.get("/health", (req, res) => {
+  res.json({
+    status: "OK",
     timestamp: new Date().toISOString(),
     dbPath: path.join(__dirname, "db.json"),
-    dbExists: fs.existsSync(path.join(__dirname, "db.json"))
+    dbExists: fs.existsSync(path.join(__dirname, "db.json")),
   });
 });
 

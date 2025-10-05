@@ -1,10 +1,24 @@
 import axios from "axios";
 
+// Función para limpiar URLs y evitar dobles barras
+const cleanURL = (baseURL, path) => {
+  const base = baseURL.replace(/\/$/, ""); // Remover barra final
+  const cleanPath = path.replace(/^\//, ""); // Remover barra inicial
+  return `${base}/${cleanPath}`;
+};
+
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
 const ENDPOINTS = {
-  products: `${API_URL}/products`,
-  cart: `${API_URL}/cart`,
+  products: cleanURL(API_URL, "/products"),
+  cart: cleanURL(API_URL, "/cart"),
 };
+
+// Debug logs para producción
+if (typeof window !== "undefined") {
+  console.log("API_URL:", API_URL);
+  console.log("Products endpoint:", ENDPOINTS.products);
+  console.log("Cart endpoint:", ENDPOINTS.cart);
+}
 export const readState = async () => {
   const productsResponse = await axios.get(ENDPOINTS.products),
     cartResponse = await axios.get(ENDPOINTS.cart);
